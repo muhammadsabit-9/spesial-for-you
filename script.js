@@ -3,9 +3,11 @@ function revealSite() {
   const main = document.getElementById('mainContainer');
   const music = document.getElementById('bgMusic');
 
-  // Putar Musik
+  // Paksa pemutaran musik saat tombol/kartu diklik
   if (music) {
-    music.play();
+    music.play().catch(error => {
+      console.log("Autoplay tercegah:", error);
+    });
   }
 
   // Hilangkan sampul depan
@@ -25,26 +27,25 @@ function revealSite() {
       });
     }
 
-    // Jalankan Animasi Kelopak Bunga Jatuh
+    // Jalankan Animasi Bunga
     createPetals();
   }, 500);
 }
 
-// Fungsi membuat animasi kelopak bunga jatuh
 function createPetals() {
   const container = document.getElementById('petalContainer');
+  if (!container) return;
+  
   const petalCount = 20;
 
   for (let i = 0; i < petalCount; i++) {
     const petal = document.createElement('div');
     petal.classList.add('petal');
     
-    // Ukuran acak
     const size = Math.random() * 10 + 10;
     petal.style.width = `${size}px`;
     petal.style.height = `${size}px`;
     
-    // Posisi dan kecepatan acak
     petal.style.left = `${Math.random() * 100}%`;
     petal.style.animationDuration = `${Math.random() * 3 + 4}s`;
     petal.style.animationDelay = `${Math.random() * 2}s`;
