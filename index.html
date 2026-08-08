@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Musik Latar Belakang -->
+  <audio id="bgMusic" loop>
+    <source src="https://assets.mixkit.co/music/preview/mixkit-happy-times-158.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Container untuk animasi bunga jatuh -->
+  <div id="petalContainer"></div>
+
+  <!-- Hero Cover Section -->
+  <section class="hero-section">
+    <p class="tap-hint"><span>✨</span> tap to open <span>✨</span></p>
+
+    <div class="card-cover" onclick="revealSite()">
+      <div class="flower-icon">🌸 🌺 🌸</div>
+      <h1>For You, <em>Aulia Nrltfiah</em></h1>
+      <p>Every petal holds a whisper of how much you mean to me on your 18th birthday.</p>
+    </div>
+  </section>
+
+  <!-- Main Scrollable Content -->
+  <div id="mainContainer" class="main-container hidden">
+
+    <!-- Section 1: Surat Dariku Untukmu -->
+    <section class="content-section">
+      <div class="inner-card">
+        <p class="sub-tag">surat dariku untukmu</p>
+        <h2>Selamat Ulang Tahun yang ke-18, Sayang!</h2>
+        <div class="line-divider"></div>
+        <p>
+          Sebelum kamu hadir, aku tidak pernah tahu ada sosok yang bisa membawa kehangatan begitu besar[cite: 1]. Begitu kamu ada, segalanya terasa <strong>lengkap</strong> — tawamu, caramu memandang dunia, dan senyumanmu selalu cukup untuk membuat hari-hariku penuh kebahagiaan[cite: 1].
+        </p>
+        <p>
+          Di usiamu yang baru ini, doa-doa terbaik selalu memelukmu[cite: 1]. Semoga langkahmu ke depan semakin dimudahkan, impianmu terwujud satu per satu, dan dunia selalu bersikap lembut padamu[cite: 1]. Terima kasih sudah tumbuh menjadi sosok yang begitu luar biasa[cite: 1].
+        </p>
+        <div class="flower-strip">
+          <span>🌸</span><span>🌺</span><span>🌼</span><span>🌸</span><span>🌷</span>
+        </div>
+        <span class="sign-off">— Always milikmu 🌹</span>
+      </div>
+    </section>
+
+    <!-- Section 2: Why I Love You Grid -->
+    <section class="content-section">
+      <div class="section-header">
+        <p class="sub-tag">a thousand reasons why</p>
+        <h2>Why You Are <em>So Special</em></h2>
+      </div>
+      <div class="grid-reasons">
+        <div class="reason-card">
+          <span>🌹</span>
+          <div class="card-title">Your Smile</div>
+          <p>Lia's smile always manages to brighten even the gloomiest of days.</p>
+        </div>
+        <div class="reason-card">
+          <span>💫</span>
+          <div class="card-title">Your Kind Soul</div>
+          <p>Your kindness is rare, sincere, and more beautiful than any flower.</p>
+        </div>
+        <div class="reason-card">
+          <span>✨</span>
+          <div class="card-title">Your Laughter</div>
+          <p>The sound of your laughter is my favorite melody—one I always want to hear.</p>
+        </div>
+        <div class="reason-card">
+          <span>💖</span>
+          <div class="card-title">Simply Aulia</div>
+          <p>At ke-18, you are always enough—and perfect—just being yourself.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Secret Garden -->
+    <section class="content-section">
+      <div class="section-header">
+        <p class="sub-tag">our secret garden</p>
+        <h2>A Garden Grown <em>Just For Lia</em></h2>
+      </div>
+      <div class="flower-grid">
+        <div class="flower-item">
+          <span>🌹</span>
+          <span class="f-name">Rose</span>
+          <span class="f-meaning">Endless Love</span>
+        </div>
+        <div class="flower-item">
+          <span>🌸</span>
+          <span class="f-name">Cherry Blossom</span>
+          <span class="f-meaning">Gentle Beauty</span>
+        </div>
+        <div class="flower-item">
+          <span>🪷</span>
+          <span class="f-name">Lotus</span>
+          <span class="f-meaning">Pure Heart</span>
+        </div>
+        <div class="flower-item">
+          <span>🌷</span>
+          <span class="f-name">Tulip</span>
+          <span class="f-meaning">Sweet 18 Happiness</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Galeri Foto Polaroid -->
+    <section class="content-section">
+      <div class="section-header">
+        <p class="sub-tag">captured in time</p>
+        <h2>Aulia's Beautiful <em>Pictures</em></h2>
+      </div>
+      <div class="photo-grid">
+        <div class="polaroid-card">
+          <img src="https://i.postimg.cc/pL1W438j/IMG-20260614-WA0011.jpg" alt="Foto 1">
+          <div class="p-text"><span>Aulia</span></div>
+        </div>
+        <div class="polaroid-card">
+          <img src="https://i.postimg.cc/9X1vLZyr/IMG-20260505-WA0051.jpg" alt="Foto 2">
+          <div class="p-text"><span>is turning</span></div>
+        </div>
+        <div class="polaroid-card">
+          <img src="https://i.postimg.cc/kG5Y0YW8/Picsart-26-08-02-13-52-57-495.jpg" alt="Foto 3">
+          <div class="p-text"><span>18</span></div>
+        </div>
+        <div class="polaroid-card">
+          <img src="https://i.postimg.cc/tJ7DSZHV/1777967270414.jpg" alt="Foto 4">
+          <div class="p-text"><span>today! ✨</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Closing Note -->
+    <section class="content-section">
+      <div class="inner-card text-center">
+        <p class="sub-tag">terima kasih sudah lahir</p>
+        <h2>Happy 18th Birthday, <em>Aulia!</em> 💖</h2>
+        <p class="sub-headline">Semoga tahun ini membawa ribuan kebahagiaan baru untukmu.</p>
+        <div class="line-divider center-line"></div>
+        <p>
+          Terima kasih sudah hadir dan mewarnai hari-hariku. Selamat merayakan hari spesialmu!
+        </p>
+        <span class="heart-icon">💗</span>
+        <p class="credit">dibuat dengan sepenuh hati, khusus untuk kamu 🌸</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
