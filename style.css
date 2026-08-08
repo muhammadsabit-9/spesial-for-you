@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #121016;
+  color: #f1f0f5;
+  padding: 20px 15px;
+  min-height: 100vh;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.tap-hint {
+  color: #d8b4fe;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.card-cover {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(216, 180, 254, 0.2);
+  padding: 35px 20px;
+  border-radius: 24px;
+  max-width: 400px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-cover:hover {
+  transform: scale(1.02);
+}
+
+.flower-icon {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+h1 em, h2 em {
+  font-style: italic;
+  color: #f472b6;
+}
+
+.card-cover p {
+  color: #a7f3d0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.main-container {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.inner-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 25px 18px;
+}
+
+.sub-tag {
+  color: #f472b6;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.line-divider {
+  height: 1px;
+  width: 50px;
+  background: #f472b6;
+  margin: 12px 0;
+}
+
+.center-line {
+  margin: 12px auto;
+}
+
+p {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.flower-strip {
+  margin: 15px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.sign-off {
+  color: #f472b6;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.grid-reasons, .flower-grid, .photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.reason-card, .flower-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 15px 10px;
+}
+
+.card-title, .f-name {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.f-meaning {
+  font-size: 0.75rem;
+  color: #f472b6;
+  display: block;
+}
+
+.polaroid-card {
+  background: #ffffff;
+  padding: 6px 6px 12px 6px;
+  border-radius: 6px;
+}
+
+.polaroid-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.p-text {
+  text-align: center;
+  color: #1e293b;
+  font-weight: 600;
+  margin-top: 6px;
+  font-size: 0.8rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+/* Animasi Bunga Jatuh */
+#petalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  background-color: #f472b6;
+  border-radius: 150% 0 150% 0;
+  opacity: 0.7;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    top: 110%;
+    transform: translateX(100px) rotate(360deg);
+  }
+}
