@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Awalnya layar polos (0 bunga di latar)
+  // Awalnya halaman kado bersih tanpa kelopak jatuh
   createPinkPetals(0);
 });
 
@@ -8,39 +8,41 @@ function revealSite() {
   const main = document.getElementById('mainContainer');
   const music = document.getElementById('bgMusic');
 
+  // Putar musik jika ada
   if (music) {
     music.play().catch(error => console.log("Autoplay:", error));
   }
 
-  // 1. EFEK SEMBURAN BUNGA KE ATAS DARI KADO (SEPERTI VIDEO)
+  // 1. SURPRISE: Semburan bunga meluncur ke atas persis seperti di video
   burstFlowersUpward();
 
-  // 2. JEDA SMOOTH TRANSITION
+  // 2. Transisi mulus (fading out kado)
   setTimeout(() => {
     hero.style.opacity = '0';
   }, 700);
 
+  // 3. Masuk ke halaman utama kata-kata
   setTimeout(() => {
     hero.style.display = 'none';
     main.classList.remove('hidden');
     window.scrollTo(0, 0);
 
-    // 3. PERCIKAN ULANG TAHUN (CONFETTI)
+    // Percikan Ulang Tahun / Birthday Confetti
     if (typeof confetti === 'function') {
       confetti({
-        particleCount: 90,
-        spread: 80,
+        particleCount: 100,
+        spread: 90,
         origin: { y: 0.6 },
-        colors: ['#f472b6', '#fb7185', '#fef08a', '#ffffff']
+        colors: ['#f43f5e', '#fb7185', '#fef08a', '#e11d48', '#ffffff']
       });
     }
 
-    // 4. MUNCULKAN KELOPAK/DAUN PINK BERJATUHAN (SEDIKIT)
+    // Kelopak bunga pink berjatuhan sedikit di latar soft pink
     createPinkPetals(10);
-  }, 1400); // Jeda 1.4 detik
+  }, 1400);
 }
 
-// Semburan bunga ke atas
+// Efek semburan bunga meluncur ke atas
 function burstFlowersUpward() {
   const giftBox = document.querySelector('.gift-box');
   if (!giftBox) return;
@@ -50,7 +52,7 @@ function burstFlowersUpward() {
   const startY = rect.top;
 
   const flowerTypes = ['🌸', '🌺', '🌻', '🌹', '🌷', '🪷', '🌼', '💖', '✨'];
-  const totalCount = 45;
+  const totalCount = 50; // Jumlah bunga yang menyembur
 
   for (let i = 0; i < totalCount; i++) {
     const flower = document.createElement('div');
@@ -60,9 +62,9 @@ function burstFlowersUpward() {
     flower.style.left = `${startX}px`;
     flower.style.top = `${startY}px`;
 
-    // Arah meluncur ke atas memancar
-    const xSpread = (Math.random() - 0.5) * 320; 
-    const yHeight = -(Math.random() * 260 + 150); 
+    // Penyebaran ke kiri/kanan dan meluncur ke atas
+    const xSpread = (Math.random() - 0.5) * 340; 
+    const yHeight = -(Math.random() * 280 + 160); 
 
     flower.style.setProperty('--tx', `${xSpread}px`);
     flower.style.setProperty('--ty', `${yHeight}px`);
@@ -75,7 +77,7 @@ function burstFlowersUpward() {
   }
 }
 
-// Kelopak/Daun Pink Berjatuhan
+// Kelopak/Daun Pink Berjatuhan di Halaman Utama
 function createPinkPetals(amount) {
   const container = document.getElementById('petalContainer');
   if (!container) return;
