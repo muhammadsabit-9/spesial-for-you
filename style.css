@@ -8,22 +8,28 @@
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #ffe4e6; /* Soft Pink */
+  background-color: #120b10; /* Latar Awal Hitam Elegan */
   color: #334155;
   padding: 20px 15px;
   min-height: 100vh;
+  transition: background-color 0.8s ease; /* Efek Mulus Saat Berubah Warna */
 }
-/* Tampilan Hero Gelap Elegan */
+
+/* Class saat kado diklik: Latar berubah jadi Soft Pink */
+body.soft-pink-bg {
+  background-color: #ffe4e6 !important;
+}
+
+/* --- HERO COVER (HITAM & KADO) --- */
 .hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  min-height: 85vh;
   text-align: center;
-  background-color: #120b10; /* Latar Gelap */
-  padding: 20px;
-  border-radius: 20px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .tap-hint {
@@ -35,7 +41,7 @@ body {
   animation: pulse 1.5s infinite;
 }
 
-/* Animasi & Desain Kotak Kado */
+/* Desain Kotak Kado */
 .gift-box {
   position: relative;
   width: 160px;
@@ -120,7 +126,6 @@ body {
   background: #f472b6;
 }
 
-/* Teks Hero */
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
@@ -138,39 +143,15 @@ body {
   color: #94a3b8;
   font-size: 0.9rem;
   max-width: 280px;
-  margin: 0 auto 25px auto;
+  margin: 0 auto 20px auto;
   line-height: 1.5;
 }
 
 .flower-icon-bottom {
   font-size: 1.2rem;
-  margin-top: 10px;
-
 }
 
-.flower-icon {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #1e293b;
-}
-
-h1 em, h2 em {
-  font-style: italic;
-  color: #e11d48;
-}
-
-.card-cover p {
-  color: #475569;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
+/* --- TAMPILAN KONTEN UTAMA --- */
 .main-container {
   max-width: 500px;
   margin: 0 auto;
@@ -291,7 +272,7 @@ p {
   text-align: center;
 }
 
-/* Animasi Bunga Jatuh */
+/* --- ANIMASI BUNGA BERJATUHAN --- */
 #petalContainer {
   position: fixed;
   top: 0;
@@ -303,12 +284,10 @@ p {
   overflow: hidden;
 }
 
-.petal {
+.falling-flower {
   position: absolute;
-  background-color: #f43f5e;
-  border-radius: 150% 0 150% 0;
-  opacity: 0.7;
   animation: fall linear infinite;
+  user-select: none;
 }
 
 @keyframes fall {
@@ -318,7 +297,7 @@ p {
   }
   100% {
     top: 110%;
-    transform: translateX(100px) rotate(360deg);
+    transform: translateX(80px) rotate(360deg);
   }
 }
 
@@ -330,4 +309,4 @@ p {
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
-  }
+}
