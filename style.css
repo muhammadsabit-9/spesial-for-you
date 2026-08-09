@@ -12,9 +12,10 @@ body {
   color: #334155;
   padding: 20px 15px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* --- HERO COVER (HALAMAN KADO AWAL) --- */
+/* --- HERO COVER (HALAMAN AWAL KADO) --- */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -23,7 +24,7 @@ body {
   min-height: 85vh;
   text-align: center;
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .tap-hint {
@@ -266,7 +267,31 @@ p {
   text-align: center;
 }
 
-/* --- ANIMASI BUNGA JATUH --- */
+/* --- ANIMASI SURPRISE LEDAKAN BUNGA DARI KADO --- */
+.burst-flower {
+  position: fixed;
+  font-size: 1.8rem;
+  pointer-events: none;
+  z-index: 1000;
+  animation: burstOut 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes burstOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.5) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty) + 80px)) scale(0.8) rotate(360deg);
+  }
+}
+
+/* --- ANIMASI BUNGA PINK JATUH DI LATAR BELAKANG --- */
 #petalContainer {
   position: fixed;
   top: 0;
@@ -291,7 +316,8 @@ p {
   }
   100% {
     top: 110%;
-    transform: translateX(80px) rotate(360deg);
+    transform: translateX(60px) rotate(360deg);
+  }
 }
 
 @keyframes pulse {
@@ -302,30 +328,4 @@ p {
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
-}
-/* --- ANIMASI LEDAKAN BUNGA DARI KADO --- */
-.hero-section {
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.burst-flower {
-  position: fixed;
-  font-size: 1.8rem;
-  pointer-events: none;
-  z-index: 1000;
-  animation: burstOut 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-@keyframes burstOut {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.4) rotate(180deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty) + 80px)) scale(0.8) rotate(360deg);
   }
