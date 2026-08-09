@@ -1,6 +1,6 @@
-// Jalankan animasi bunga banyak di awal saat web pertama kali dimuat
+// Begitu web dibuka, langsung munculkan 40 bunga yang jatuh
 document.addEventListener('DOMContentLoaded', () => {
-  createFlowers(40); // 40 bunga saat di halaman kado
+  createFlowers(40);
 });
 
 function revealSite() {
@@ -12,7 +12,7 @@ function revealSite() {
     music.play().catch(error => console.log("Autoplay:", error));
   }
 
-  // Sembunyikan cover kado
+  // Sembunyikan tampilan kado
   hero.style.opacity = '0';
 
   setTimeout(() => {
@@ -20,7 +20,7 @@ function revealSite() {
     main.classList.remove('hidden');
     window.scrollTo(0, 0);
 
-    // Efek Confetti saat kado dibuka
+    // Efek ledakan confetti saat kado dibuka
     if (typeof confetti === 'function') {
       confetti({
         particleCount: 100,
@@ -29,8 +29,8 @@ function revealSite() {
       });
     }
 
-    // Ubah jumlah bunga jadi SEDIKIT saja saat masuk ke isi surat
-    createFlowers(12); // Hanya 12 bunga agar teks tidak tertutup
+    // Ganti jumlah bunga jadi sedikit (12 saja) agar teks tidak tertutup
+    createFlowers(12);
   }, 500);
 }
 
