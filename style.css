@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #ffe4e6; /* Tetap Soft Pink Cantik dari Awal */
+  background-color: #ffe4e6; /* Soft Pink Background */
   color: #334155;
   padding: 20px 15px;
   min-height: 100vh;
@@ -291,7 +291,7 @@ p {
   }
 }
 
-/* --- ANIMASI DAUN/KELOPAK PINK BERJATUHAN --- */
+/* --- ANIMASI KELOPAK PINK HALUS JATUH (ESTETIK & SEDIKIT) --- */
 #petalContainer {
   position: fixed;
   top: 0;
@@ -305,18 +305,22 @@ p {
 
 .falling-flower {
   position: absolute;
-  animation: fall linear infinite;
+  animation: fallSway linear infinite;
   user-select: none;
+  opacity: 0.85;
 }
 
-@keyframes fall {
+@keyframes fallSway {
   0% {
     top: -10%;
     transform: translateX(0) rotate(0deg);
   }
+  50% {
+    transform: translateX(35px) rotate(180deg);
+  }
   100% {
     top: 110%;
-    transform: translateX(50px) rotate(360deg);
+    transform: translateX(-20px) rotate(360deg);
   }
 }
 
