@@ -8,13 +8,13 @@
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #ffe4e6; /* Tetap Soft Pink dari awal */
+  background-color: #ffe4e6; /* Soft Pink */
   color: #334155;
   padding: 20px 15px;
   min-height: 100vh;
 }
 
-/* --- HERO COVER (SAMPUL PINK DENGAN KADO) --- */
+/* --- HERO COVER (HALAMAN KADO AWAL) --- */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -145,7 +145,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* --- KONTEN UTAMA --- */
+/* --- KONTEN UTAMA (ISI SURAT) --- */
 .main-container {
   max-width: 500px;
   margin: 0 auto;
@@ -266,7 +266,7 @@ p {
   text-align: center;
 }
 
-/* --- ANIMASI BUNGA BERJATUHAN SANGAT BANYAK --- */
+/* --- ANIMASI BUNGA JATUH --- */
 #petalContainer {
   position: fixed;
   top: 0;
