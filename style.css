@@ -8,14 +8,14 @@
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #120b10; /* Latar Gelap Elegan seperti contoh */
-  color: #f8fafc;
+  background-color: #ffe4e6; /* Tetap Soft Pink Cantik dari Awal */
+  color: #334155;
   padding: 20px 15px;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* --- HERO COVER (SAMPUL KADO AWAL) --- */
+/* --- HERO COVER (HALAMAN KADO AWAL) --- */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ body {
 }
 
 .tap-hint {
-  color: #f472b6;
+  color: #be123c;
   font-size: 0.85rem;
   letter-spacing: 2px;
   margin-bottom: 25px;
@@ -52,11 +52,11 @@ body {
 .gift-lid {
   width: 170px;
   height: 40px;
-  background: #a8325a;
+  background: #e11d48;
   border-radius: 8px;
   position: relative;
   left: -5px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
   z-index: 2;
 }
 
@@ -68,7 +68,7 @@ body {
   transform: translateX(-50%);
   width: 25px;
   height: 100%;
-  background: #f472b6;
+  background: #ffffff;
 }
 
 .gift-bow {
@@ -85,7 +85,7 @@ body {
   position: absolute;
   width: 25px;
   height: 20px;
-  border: 4px solid #f472b6;
+  border: 4px solid #ffffff;
   border-radius: 50% 50% 0 50%;
 }
 
@@ -103,11 +103,11 @@ body {
 .gift-body {
   width: 160px;
   height: 140px;
-  background: #7a2240;
+  background: #be123c;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   position: relative;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.3);
 }
 
 .gift-body::after {
@@ -118,24 +118,24 @@ body {
   transform: translateX(-50%);
   width: 25px;
   height: 100%;
-  background: #f472b6;
+  background: #ffffff;
 }
 
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
-  color: #ffffff;
+  color: #1e293b;
   margin-bottom: 10px;
 }
 
 .hero-text h1 em {
   font-style: italic;
-  color: #f472b6;
+  color: #e11d48;
   display: block;
 }
 
 .hero-text p {
-  color: #94a3b8;
+  color: #475569;
   font-size: 0.9rem;
   max-width: 280px;
   margin: 0 auto 20px auto;
@@ -161,15 +161,15 @@ body {
 }
 
 .inner-card {
-  background: #1e131d;
-  border: 1px solid #4a1d30;
+  background: #ffffff;
+  border: 1px solid #fecdd3;
   border-radius: 20px;
   padding: 25px 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(225, 29, 72, 0.08);
 }
 
 .sub-tag {
-  color: #f472b6;
+  color: #e11d48;
   font-size: 0.8rem;
   margin-bottom: 10px;
   font-weight: 600;
@@ -181,13 +181,13 @@ h2 {
   font-size: 1.5rem;
   line-height: 1.4;
   margin-bottom: 12px;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .line-divider {
   height: 2px;
   width: 50px;
-  background: #f472b6;
+  background: #f43f5e;
   margin: 12px 0;
   border-radius: 2px;
 }
@@ -197,7 +197,7 @@ h2 {
 }
 
 p {
-  color: #cbd5e1;
+  color: #475569;
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 12px;
@@ -210,7 +210,7 @@ p {
 }
 
 .sign-off {
-  color: #f472b6;
+  color: #e11d48;
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -223,21 +223,22 @@ p {
 }
 
 .reason-card, .flower-item {
-  background: #1e131d;
-  border: 1px solid #4a1d30;
+  background: #ffffff;
+  border: 1px solid #fecdd3;
   border-radius: 14px;
   padding: 15px 10px;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.03);
 }
 
 .card-title, .f-name {
   font-weight: 600;
-  color: #ffffff;
+  color: #0f172a;
   font-size: 0.9rem;
 }
 
 .f-meaning {
   font-size: 0.75rem;
-  color: #f472b6;
+  color: #e11d48;
   display: block;
 }
 
@@ -245,6 +246,7 @@ p {
   background: #ffffff;
   padding: 8px 8px 14px 8px;
   border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.08);
 }
 
 .polaroid-card img {
@@ -256,7 +258,7 @@ p {
 
 .p-text {
   text-align: center;
-  color: #0f172a;
+  color: #1e293b;
   font-weight: 600;
   margin-top: 6px;
   font-size: 0.8rem;
@@ -266,13 +268,13 @@ p {
   text-align: center;
 }
 
-/* --- ANIMASI BUNGA MENYEMBUR KE ATAS (SEPERTI VIDEO) --- */
+/* --- ANIMASI SEMBURAN SURPRISE BUNGA KE ATAS --- */
 .burst-flower {
   position: fixed;
   font-size: 2rem;
   pointer-events: none;
   z-index: 1000;
-  animation: burstUp 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  animation: burstUp 1.3s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
 }
 
 @keyframes burstUp {
@@ -280,12 +282,12 @@ p {
     opacity: 0;
     transform: translate(-50%, 0) scale(0.2) rotate(0deg);
   }
-  30% {
+  25% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(calc(-50% + var(--tx)), var(--ty)) scale(1.3) rotate(180deg);
+    transform: translate(calc(-50% + var(--tx)), var(--ty)) scale(1.4) rotate(180deg);
   }
 }
 
@@ -320,7 +322,7 @@ p {
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  50% { opacity: 0.5; }
 }
 
 @keyframes fadeIn {
