@@ -8,8 +8,8 @@
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #121016;
-  color: #f1f0f5;
+  background-color: #fef9c3; /* Soft Yellow Warm */
+  color: #334155;
   padding: 20px 15px;
   min-height: 100vh;
 }
@@ -26,19 +26,20 @@ body {
 }
 
 .tap-hint {
-  color: #d8b4fe;
+  color: #d97706;
   font-size: 0.9rem;
   margin-bottom: 20px;
   animation: pulse 1.5s infinite;
 }
 
 .card-cover {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(216, 180, 254, 0.2);
+  background: #ffffff;
+  border: 1px solid #fef08a;
   padding: 35px 20px;
   border-radius: 24px;
   max-width: 400px;
   cursor: pointer;
+  box-shadow: 0 10px 25px rgba(217, 119, 6, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -55,16 +56,16 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: #1e293b;
 }
 
 h1 em, h2 em {
   font-style: italic;
-  color: #f472b6;
+  color: #e11d48;
 }
 
 .card-cover p {
-  color: #a7f3d0;
+  color: #059669;
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -83,16 +84,18 @@ h1 em, h2 em {
 }
 
 .inner-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #fef08a;
   border-radius: 20px;
   padding: 25px 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
 }
 
 .sub-tag {
-  color: #f472b6;
+  color: #e11d48;
   font-size: 0.8rem;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 h2 {
@@ -100,13 +103,15 @@ h2 {
   font-size: 1.5rem;
   line-height: 1.4;
   margin-bottom: 12px;
+  color: #0f172a;
 }
 
 .line-divider {
-  height: 1px;
+  height: 2px;
   width: 50px;
-  background: #f472b6;
+  background: #f43f5e;
   margin: 12px 0;
+  border-radius: 2px;
 }
 
 .center-line {
@@ -114,7 +119,7 @@ h2 {
 }
 
 p {
-  color: #cbd5e1;
+  color: #475569;
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 12px;
@@ -127,7 +132,7 @@ p {
 }
 
 .sign-off {
-  color: #f472b6;
+  color: #e11d48;
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -140,28 +145,30 @@ p {
 }
 
 .reason-card, .flower-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #ffffff;
+  border: 1px solid #fef08a;
   border-radius: 14px;
   padding: 15px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
 .card-title, .f-name {
   font-weight: 600;
-  color: #ffffff;
+  color: #0f172a;
   font-size: 0.9rem;
 }
 
 .f-meaning {
   font-size: 0.75rem;
-  color: #f472b6;
+  color: #e11d48;
   display: block;
 }
 
 .polaroid-card {
   background: #ffffff;
-  padding: 6px 6px 12px 6px;
-  border-radius: 6px;
+  padding: 8px 8px 14px 8px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .polaroid-card img {
@@ -183,15 +190,6 @@ p {
   text-align: center;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
 /* Animasi Bunga Jatuh */
 #petalContainer {
   position: fixed;
@@ -206,7 +204,7 @@ p {
 
 .petal {
   position: absolute;
-  background-color: #f472b6;
+  background-color: #f43f5e;
   border-radius: 150% 0 150% 0;
   opacity: 0.7;
   animation: fall linear infinite;
@@ -221,4 +219,14 @@ p {
     top: 110%;
     transform: translateX(100px) rotate(360deg);
   }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
