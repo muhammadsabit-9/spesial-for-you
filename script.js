@@ -3,14 +3,15 @@ function revealSite() {
   const main = document.getElementById('mainContainer');
   const music = document.getElementById('bgMusic');
 
-  // Paksa pemutaran musik saat tombol/kartu diklik
+  // 1. Putar Musik
   if (music) {
-    music.play().catch(error => {
-      console.log("Autoplay tercegah:", error);
-    });
+    music.play().catch(error => console.log("Autoplay:", error));
   }
 
-  // Hilangkan sampul depan
+  // 2. Ubah Warna Latar Belakang dari Hitam ke Soft Pink
+  document.body.classList.add('soft-pink-bg');
+
+  // 3. Hilangkan Cover Hitam
   hero.style.opacity = '0';
 
   setTimeout(() => {
@@ -18,38 +19,44 @@ function revealSite() {
     main.classList.remove('hidden');
     window.scrollTo(0, 0);
 
-    // Jalankan Kembang Api
+    // 4. Efek Kembang Api
     if (typeof confetti === 'function') {
       confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 120,
+        spread: 80,
         origin: { y: 0.6 }
       });
     }
 
-    // Jalankan Animasi Bunga
-    createPetals();
+    // 5. Munculkan Banyak Bunga Berjatuhan
+    createManyFlowers();
   }, 500);
 }
 
-function createPetals() {
+// Fungsi membuat bermacam-macam bunga jatuh
+function createManyFlowers() {
   const container = document.getElementById('petalContainer');
   if (!container) return;
-  
-  const petalCount = 20;
 
-  for (let i = 0; i < petalCount; i++) {
-    const petal = document.createElement('div');
-    petal.classList.add('petal');
-    
-    const size = Math.random() * 10 + 10;
-    petal.style.width = `${size}px`;
-    petal.style.height = `${size}px`;
-    
-    petal.style.left = `${Math.random() * 100}%`;
-    petal.style.animationDuration = `${Math.random() * 3 + 4}s`;
-    petal.style.animationDelay = `${Math.random() * 2}s`;
+  // Jenis-jenis emoji bunga
+  const flowers = ['🌸', '🌺', '🌻', '🌹', '🌷', '🪷', '🌼'];
+  const totalFlowers = 35; // Jumlah bunga diperbanyak
 
-    container.appendChild(petal);
+  for (let i = 0; i < totalFlowers; i++) {
+    const flower = document.createElement('div');
+    flower.classList.add('falling-flower');
+    
+    // Pilih bunga acak
+    const randomFlower = flowers[Math.floor(Math.random() * flowers.length)];
+    flower.innerText = randomFlower;
+
+    // Ukuran & Posisi Acak
+    const size = Math.random() * 1.2 + 1; // Ukuran bunga bervariasi
+    flower.style.fontSize = `${size}rem`;
+    flower.style.left = `${Math.random() * 100}%`;
+    flower.style.animationDuration = `${Math.random() * 3 + 3}s`;
+    flower.style.animationDelay = `${Math.random() * 2}s`;
+
+    container.appendChild(flower);
   }
 }
