@@ -1,9 +1,13 @@
+// Jalankan animasi bunga banyak di awal saat web pertama kali dimuat
+document.addEventListener('DOMContentLoaded', () => {
+  createFlowers(40); // 40 bunga saat di halaman kado
+});
+
 function revealSite() {
   const hero = document.querySelector('.hero-section');
   const main = document.getElementById('mainContainer');
   const music = document.getElementById('bgMusic');
 
-  // Putar Musik
   if (music) {
     music.play().catch(error => console.log("Autoplay:", error));
   }
@@ -16,37 +20,39 @@ function revealSite() {
     main.classList.remove('hidden');
     window.scrollTo(0, 0);
 
-    // Efek Kembang Api Confetti
+    // Efek Confetti saat kado dibuka
     if (typeof confetti === 'function') {
       confetti({
-        particleCount: 150,
-        spread: 100,
+        particleCount: 100,
+        spread: 70,
         origin: { y: 0.6 }
       });
     }
 
-    // MUNCULKAN BANJIR BUNGA
-    createBanjirBunga();
+    // Ubah jumlah bunga jadi SEDIKIT saja saat masuk ke isi surat
+    createFlowers(12); // Hanya 12 bunga agar teks tidak tertutup
   }, 500);
 }
 
-function createBanjirBunga() {
+function createFlowers(amount) {
   const container = document.getElementById('petalContainer');
   if (!container) return;
 
-  const flowers = ['🌸', '🌺', '🌻', '🌹', '🌷', '🪷', '🌼', '💐'];
-  const totalBunga = 50; // Jumlah bunga diperbanyak agar melimpah
+  // Bersihkan bunga sebelumnya
+  container.innerHTML = '';
 
-  for (let i = 0; i < totalBunga; i++) {
+  const flowers = ['🌸', '🌺', '🌻', '🌹', '🌷', '🪷', '🌼'];
+
+  for (let i = 0; i < amount; i++) {
     const flower = document.createElement('div');
     flower.classList.add('falling-flower');
     
     flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
 
-    const size = Math.random() * 1.3 + 1;
+    const size = Math.random() * 1.2 + 0.8;
     flower.style.fontSize = `${size}rem`;
     flower.style.left = `${Math.random() * 100}%`;
-    flower.style.animationDuration = `${Math.random() * 3 + 2.5}s`;
+    flower.style.animationDuration = `${Math.random() * 4 + 3}s`;
     flower.style.animationDelay = `${Math.random() * 3}s`;
 
     container.appendChild(flower);
