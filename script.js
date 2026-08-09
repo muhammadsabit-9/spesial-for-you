@@ -1,6 +1,6 @@
-// Begitu web dibuka, langsung munculkan 40 bunga yang jatuh
 document.addEventListener('DOMContentLoaded', () => {
-  createFlowers(40);
+  // Awalnya munculkan bunga sedikit di latar belakang (12 bunga)
+  createFlowers(12);
 });
 
 function revealSite() {
@@ -8,45 +8,91 @@ function revealSite() {
   const main = document.getElementById('mainContainer');
   const music = document.getElementById('bgMusic');
 
+  // Putar musik jika ada
   if (music) {
     music.play().catch(error => console.log("Autoplay:", error));
   }
 
-  // Sembunyikan tampilan kado
-  hero.style.opacity = '0';
+  // 1. EFEK SURPRISE: Ledakan bunga dari dalam kado
+  explodeGiftFlowers();
+
+  // Efek kembang api confetti
+  if (typeof confetti === 'function') {
+    confetti({
+      particleCount: 120,
+      spread: 90,
+      origin: { y: 0.5 }
+    });
+  }
+
+  // Animasi kado membesar sedikit lalu memudar
+  hero.style.transform = 'scale(1.08)';
+  
+  // 2. JEDA (DELAY) SEBELUM MASUK KE ISI SURAT
+  setTimeout(() => {
+    hero.style.opacity = '0';
+  }, 600);
 
   setTimeout(() => {
     hero.style.display = 'none';
     main.classList.remove('hidden');
     window.scrollTo(0, 0);
 
-    // Efek ledakan confetti saat kado dibuka
-    if (typeof confetti === 'function') {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
-    }
-
-    // Ganti jumlah bunga jadi sedikit (12 saja) agar teks tidak tertutup
+    // Kembalikan bunga ke jumlah normal/sedikit agar teks surat tidak tertutup
     createFlowers(12);
-  }, 500);
+  }, 1200); // Jeda 1.2 detik agar efek kejutan bunga selesai dulu
 }
 
+// Efek ledakan bunga yang meluncur keluar dari posisi kado
+function explodeGiftFlowers() {
+  const giftBox = document.querySelector('.gift-box');
+  if (!giftBox) return;
+
+  const rect = giftBox.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  const flowers = ['🌸', '🌺', '🌻', '🌹', '🌷', '🪷', '🌼', '💐', '✨'];
+  const totalExplosion = 40; // Banyak bunga yang memancar keluar kado
+
+  for (let i = 0; i < totalExplosion; i++) {
+    const flower = document.createElement('div');
+    flower.classList.add('burst-flower');
+    flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+
+    // Posisi awal persis di tengah kado
+    flower.style.left = `${centerX}px`;
+    flower.style.top = `${centerY}px`;
+
+    // Arah lemparan bunga secara acak ke segala arah
+    const angle = Math.random() * Math.PI * 2;
+    const velocity = Math.random() * 250 + 100; // Jarak lemparan
+    const x = Math.cos(angle) * velocity;
+    const y = Math.sin(angle) * velocity - 100; // Cenderung meluncur ke atas dulu
+
+    flower.style.setProperty('--tx', `${x}px`);
+    flower.style.setProperty('--ty', `${y}px`);
+
+    document.body.appendChild(flower);
+
+    // Hapus elemen bunga burst setelah animasinya selesai
+    setTimeout(() => {
+      flower.remove();
+    }, 1500);
+  }
+}
+
+// Bunga latar belakang yang melayang perlahan
 function createFlowers(amount) {
   const container = document.getElementById('petalContainer');
   if (!container) return;
 
-  // Bersihkan bunga sebelumnya
   container.innerHTML = '';
-
   const flowers = ['🌸', '🌺', '🌻', '🌹', '🌷', '🪷', '🌼'];
 
   for (let i = 0; i < amount; i++) {
     const flower = document.createElement('div');
     flower.classList.add('falling-flower');
-    
     flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
 
     const size = Math.random() * 1.2 + 0.8;
@@ -57,4 +103,4 @@ function createFlowers(amount) {
 
     container.appendChild(flower);
   }
-}
+                   }
